@@ -11,8 +11,16 @@ const storeOwnerRoutes = require('./routes/storeOwner');
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(express.json());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://store-frontend-gamma-five.vercel.app",
+    ],
+    credentials: true, 
+  })
+);
+  app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Store Rating API');

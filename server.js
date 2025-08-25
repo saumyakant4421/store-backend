@@ -16,11 +16,13 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://store-frontend-gamma-five.vercel.app",
+      "https://store-frontend-kf4y8onth-saumya-kants-projects.vercel.app",
     ],
-    credentials: true, 
+    credentials: true,
   })
 );
-  app.use(express.json());
+  
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Store Rating API');

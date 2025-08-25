@@ -13,11 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://store-frontend-gamma-five.vercel.app",
-      "https://store-frontend-kf4y8onth-saumya-kants-projects.vercel.app",
-    ],
+    origin: true, 
     credentials: true,
   })
 );

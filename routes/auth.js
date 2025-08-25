@@ -17,11 +17,11 @@ const handleValidation = (req, res) => {
 router.post(
   '/signup',
   [
-    body('name').isLength({ min: 10, max: 60 }).withMessage('Name must be 20-60 characters'),
+  body('name').isLength({ min: 20, max: 60 }).withMessage('Name must be 20-60 characters'),
     body('email').isEmail().withMessage('Invalid email'),
     body('address').isLength({ max: 400 }).withMessage('Address must be at most 400 characters'),
     body('password')
-      .matches(passwordRegex)
+      .matches(/^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,16}$/)
       .withMessage('Password must be 8-16 chars and include at least one uppercase letter and one special character'),
   ],
   async (req, res) => {

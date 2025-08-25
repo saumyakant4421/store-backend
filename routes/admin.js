@@ -118,7 +118,7 @@ router.post(
   '/users',
   roleMiddleware(['System Administrator']),
   [
-    body('name').isLength({ min: 10, max: 40 }).withMessage('Name must be 10-40 characters'),
+  body('name').isLength({ min: 20, max: 60 }).withMessage('Name must be 20-60 characters'),
     body('email').isEmail().withMessage('Invalid email'),
     body('address').isLength({ max: 400 }).withMessage('Address must be at most 400 characters'),
     body('password')
